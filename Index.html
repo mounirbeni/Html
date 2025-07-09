@@ -36,23 +36,22 @@
             box-sizing: border-box;
         }
 
-        body {
+          body {
             font-family: 'Inter', sans-serif;
-            line-height: 1.7;
+            line-height: 1.6;
             color: var(--text-dark);
             background-color: var(--bg-light);
             overflow-x: hidden;
         }
 
-        .font-poppins {
-            font-family: 'Poppins', sans-serif;
+        /* Fix for horizontal overflow */
+        .max-w-7xl {
+            overflow-x: hidden;
         }
 
-        .primary-gradient {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
-        }
-
-        .secondary-gradient {
+        .hero-section {
+            overflow: hidden; /* Ensure no overflow within hero section */
+        }    .secondary-gradient {
             background: linear-gradient(135deg, var(--secondary-color) 0%, #ffffff 100%);
         }
 
@@ -62,12 +61,6 @@
             position: relative;
             overflow: hidden;
         }
-
-.hero-section p {
-    max-width: 100%;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-}
 
         .hero-section::before {
             content: '';
@@ -110,10 +103,6 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
         }
-
-card p {
-    font-size: 1.1rem; /* تحسين القراءة */
-}
 
         .card:hover {
             transform: translateY(-5px);
@@ -348,62 +337,6 @@ card p {
             background: var(--accent-color);
             transform: translateY(-5px);
         }
-
-/* إضافة هذا الكود إلى قسم CSS */
-.service-icon {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    flex-shrink: 0; /* منع الانكماش */
-    min-width: 60px; /* عرض أدنى ثابت */
-    min-height: 60px; /* ارتفاع أدنى ثابت */
-}
-
-/* إصلاح الأيقونات على الشاشات الصغيرة */
-@media (max-width: 768px) {
-    .service-icon {
-        width: 50px;
-        height: 50px;
-        min-width: 50px;
-        min-height: 50px;
-        font-size: 1.2rem;
-        margin-bottom: 0.8rem;
-    }
-    
-    /* إصلاح تخطيط البطاقات */
-    .card {
-        padding: 1rem;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    /* إصلاح الأيقونات في قسم Core Competencies */
-    .card.text-center {
-        align-items: center;
-    }
-    
-    .card.text-center i {
-        font-size: 1.5rem !important;
-        margin-bottom: 0.5rem;
-    }
-}
-
-/* إصلاح إضافي للأيقونات في جميع الأقسام */
-i.fas, i.fab {
-    display: inline-block;
-    width: auto;
-    height: auto;
-    line-height: 1;
-}
-
     </style>
 </head>
 <body>
@@ -1589,4 +1522,3 @@ i.fas, i.fab {
     </script>
 </body>
                                                                                                                </html>
-         
