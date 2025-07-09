@@ -30,15 +30,10 @@
             --bg-light: #faf9f7;
         }
 
-        /* قواعد عامة لمنع التجاوز الأفقي */
-        html, body {
-            overflow-x: hidden; /* يمنع التمرير الأفقي على مستوى الصفحة بالكامل */
-        }
-
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box; /* يضمن أن الحشوة والحدود لا تزيد من العرض الكلي للعنصر */
+            box-sizing: border-box;
         }
 
         body {
@@ -46,30 +41,6 @@
             line-height: 1.6;
             color: var(--text-dark);
             background-color: var(--bg-light);
-        }
-
-        /* Ensure images and other media are responsive */
-        img, video, iframe {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* Prevent tables from causing overflow */
-        table {
-            width: 100%;
-            display: block;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        /* Adjust specific elements if they have fixed widths or large paddings/margins */
-        .max-w-7xl {
-            overflow-x: hidden;
-        }
-
-        /* Additional general reset for potential overflow issues */
-        div, section, header, footer, nav, main, article, aside {
             overflow-x: hidden;
         }
 
@@ -88,6 +59,8 @@
         .hero-section {
             min-height: 100vh;
             background: linear-gradient(135deg, var(--bg-light) 0%, var(--secondary-color) 100%);
+            position: relative;
+            overflow: hidden;
             position: relative;
             overflow: hidden;
         }
@@ -240,8 +213,8 @@
             font-size: 1.5rem;
             margin-bottom: 1rem;
             flex-shrink: 0; /* منع الانكماش */
-            min-width: 60px; /* عرض أدنى ثابت */
-            min-height: 60px; /* ارتفاع أدنى ثابت */
+    min-width: 60px; /* عرض أدنى ثابت */
+    min-height: 60px; /* ارتفاع أدنى ثابت */
         }
 
         .contact-form {
@@ -343,36 +316,35 @@
         }
 
         .back-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 1rem; /* تم تعديل القيمة من 2rem إلى 1rem لتقليل المسافة من اليمين */
-            background: var(--primary-color);
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.3s ease;
-            z-index: 1000;
-            box-sizing: border-box; /* تم التأكد من وجود هذه الخاصية لضمان حساب الحجم بشكل صحيح */
-        }
+    position: fixed;
+    bottom: 2rem;
+    right: 1rem; /* تم تعديل القيمة من 2rem إلى 1rem لتقليل المسافة من اليمين */
+    background: var(--primary-color);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-sizing: border-box; /* تم التأكد من وجود هذه الخاصية لضمان حساب الحجم بشكل صحيح */
+}
 
-        .back-to-top.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+.back-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-        .back-to-top:hover {
-            background: var(--accent-color);
-            transform: translateY(-5px);
-        }
-
-    </style>
+.back-to-top:hover {
+    background: var(--accent-color);
+    transform: translateY(-5px);
+}
+  </style>  
     
 </head>
 <body>
