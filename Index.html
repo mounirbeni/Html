@@ -1625,6 +1625,21 @@ document.getElementById('menuToggle').addEventListener('click', function () {
     mobileMenu.classList.toggle('hidden');
 });
 
+<!-- Toggle script -->
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleButtons = document.querySelectorAll(".toggle-btn");
+    toggleButtons.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        const responsibilities = this.nextElementSibling;
+        responsibilities.classList.toggle("hidden");
+        this.textContent = responsibilities.classList.contains("hidden")
+          ? "Show All Responsibilities"
+          : "Show Less";
+      });
+    });
+  });
+
+
     </script>
 </body>
                                                                                                                </html>
