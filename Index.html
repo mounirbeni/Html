@@ -348,6 +348,62 @@ card p {
             background: var(--accent-color);
             transform: translateY(-5px);
         }
+
+/* إضافة هذا الكود إلى قسم CSS */
+.service-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    flex-shrink: 0; /* منع الانكماش */
+    min-width: 60px; /* عرض أدنى ثابت */
+    min-height: 60px; /* ارتفاع أدنى ثابت */
+}
+
+/* إصلاح الأيقونات على الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .service-icon {
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+        min-height: 50px;
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    /* إصلاح تخطيط البطاقات */
+    .card {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    /* إصلاح الأيقونات في قسم Core Competencies */
+    .card.text-center {
+        align-items: center;
+    }
+    
+    .card.text-center i {
+        font-size: 1.5rem !important;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* إصلاح إضافي للأيقونات في جميع الأقسام */
+i.fas, i.fab {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    line-height: 1;
+}
+
     </style>
 </head>
 <body>
