@@ -344,6 +344,30 @@
     background: var(--accent-color);
     transform: translateY(-5px);
 }
+
+html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+.floating-element {
+    max-width: 100%;
+}
+
+.progress-circle,
+.card,
+section,
+.container {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  .floating-element {
+    display: none;
+  }
+}
+
   </style>  
     
 </head>
