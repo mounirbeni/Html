@@ -1826,22 +1826,25 @@ Demonstrated consistent excellence in delivering outstanding hospitality service
   }
 
   document.addEventListener("DOMContentLoaded", () => {
-    const dotContainer = document.getElementById("testimonial-dots");
-    if (dotContainer) {
+  const dotContainer = document.getElementById("testimonial-dots");
+
+  if (dotContainer) {
+    testimonials.forEach((_, i) => {
+      const dot = document.createElement("div");
       dot.className = `testimonial-dot ${i === 0 ? 'active' : ''}`;
-        dot.addEventListener("click", () => {
-          current = i;
-          renderTestimonial(current);
-dot.classList.toggle("active", i === index);
-        });
-        dotContainer.appendChild(dot);
+      dot.addEventListener("click", () => {
+        current = i;
+        renderTestimonial(current);
       });
+      dotContainer.appendChild(dot);
+    });
 
-      renderTestimonial(0);
-    }
+    renderTestimonial(0);
+  }
 
-    console.log("Mounir Banni Portfolio - All scripts loaded");
-  });
+  console.log("Mounir Banni Portfolio - All scripts loaded");
+});
+
 </script>
 </body>
                                                                                                                </html>
