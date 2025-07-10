@@ -1191,18 +1191,18 @@ Demonstrated consistent excellence in delivering outstanding hospitality service
             <h3 class="font-poppins text-2xl font-semibold mb-8 text-center text-gray-800">Initiative Impact</h3>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div class="text-center">
-                    <div class="text-5xl font-bold text-yellow-600 mb-2 count-up" data-count="40%">0%</div>
+                    <div class="text-5xl font-bold text-yellow-600 mb-2 count-up" data-count="40" data-suffix="%">0%</div>
                     <p class="text-gray-700 font-medium">Faster Check-in Process</p>
                 </div>
                 <div class="text-center">
-                    <div class="text-5xl font-bold text-yellow-600 mb-2 count-up" data-count="25%">0%</div>
+                    <div class="text-5xl font-bold text-yellow-600 mb-2 count-up" data-count="25" data-suffix="%">0%</div>
                     <p class="text-gray-700 font-medium">Increase in Guest Satisfaction</p>
                 </div>
                 <div class="text-center">
-                    <div class="text-5xl font-bold text-yellow-600 mb-2 count-up" data-count="+3000">+0</div>
+                    <div class="text-5xl font-bold text-yellow-600 mb-2 count-up" data-count="3000" data-prefix="+">+0</div>
                     <p class="text-gray-700 font-medium">Guests Served</p>
                 </div>
-                <div class="text-5xl font-bold text-yellow-600 mb-2 count-up" data-count="100%">0%</div>
+                <div class="text-5xl font-bold text-yellow-600 mb-2 count-up" data-count="100" data-suffix="%">0%</div>
                     <p class="text-gray-700 font-medium">Improvement In Service Quality</p>
                 </div>
             </div>
@@ -1721,24 +1721,25 @@ document.getElementById('menuToggle').addEventListener('click', function () {
     });
   });
 
-
-  // Count-up animation
   function animateNumber(el, target, duration = 2000) {
     let start = 0;
     const increment = target / (duration / 16);
+    const suffix = el.getAttribute('data-suffix') || '';
+    const prefix = el.getAttribute('data-prefix') || '';
+    
     const update = () => {
       start += increment;
       if (start < target) {
-        el.textContent = Math.floor(start);
+        el.textContent = `${prefix}${Math.floor(start)}${suffix}`;
         requestAnimationFrame(update);
       } else {
-        el.textContent = target;
+        el.textContent = `${prefix}${target}${suffix}`;
       }
     };
+
     requestAnimationFrame(update);
   }
 
-  // Observer to trigger animation on scroll
   const numberObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
