@@ -1835,6 +1835,7 @@ Demonstrated consistent excellence in delivering outstanding hospitality service
         dot.addEventListener("click", () => {
           current = i;
           renderTestimonial(current);
+dot.classList.toggle("active", i === index);
         });
         dotContainer.appendChild(dot);
       });
