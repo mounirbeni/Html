@@ -489,6 +489,11 @@ section,
 ‎        <a href="#about" class="px-8 py-3 text-lg border-2 border-yellow-600 text-yellow-600 rounded-full hover:bg-yellow-600 hover:text-white transition-all">Learn More</a>
 ‎      </div>
 ‎    </div>
+<div class="mt-10 flex justify-center">
+  <div class="w-40 h-40 sm:w-52 sm:h-52 rounded-full overflow-hidden shadow-xl border-4 border-yellow-300">
+    <img src="Mounir Banni.jpg" alt="Mounir Banni" class="object-cover w-full h-full" loading="lazy">
+  </div>
+</div>
 ‎  </section>
 
     <!-- About Section -->
@@ -1907,6 +1912,17 @@ Demonstrated consistent excellence in delivering outstanding hospitality service
 ‎        mobileMenu.classList.toggle('hidden');
 ‎      });
 ‎    });
+
+window.addEventListener('scroll', function () {
+      if (window.scrollY > 10) {
+        navbar.classList.add('py-2', 'shadow-lg');
+        navbar.classList.remove('py-4');
+      } else {
+        navbar.classList.remove('py-2', 'shadow-lg');
+        navbar.classList.add('py-4');
+      }
+    });
+  });
     </script>
 </body>
                                                                                                                </html>
