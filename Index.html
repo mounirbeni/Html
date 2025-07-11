@@ -407,12 +407,24 @@ section,
     display: none;
   }
 }
+    @keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
 /* زر Show All Responsibilities */ .toggle-btn { background: none; border: none; color: var(--primary-color); font-weight: 600; cursor: pointer; padding: 0; margin-top: 0.75rem; transition: color 0.2s ease; } .toggle-btn:hover { text-decoration: underline; color: var(--accent-color); } /* قائمة المهام */ .responsibilities { list-style: none; margin-top: 1rem; padding-left: 1rem; } .responsibilities li { position: relative; padding-left: 1rem; margin-bottom: 0.5rem; font-size: 0.9375rem; color: var(--text-dark); } .responsibilities li::before { content: '•'; position: absolute; left: 0; color: var(--primary-color); font-weight: bold; }
     
 </style>  
     
 </head>
 <body>
+    <!-- Loading Spinner -->
+<div id="loader" class="fixed inset-0 flex items-center justify-center bg-white z-[9999]">
+  <div class="animate-spin rounded-full h-16 w-16 border-4 border-yellow-500 border-t-transparent"></div>
+</div>
     <!-- Scroll Progress Indicator -->
     <div class="scroll-indicator" id="scrollIndicator"></div>
 
@@ -1856,7 +1868,17 @@ Demonstrated consistent excellence in delivering outstanding hospitality service
 
   console.log("Mounir Banni Portfolio - All scripts loaded");
 });
-
+  window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
+    if (loader) {
+      loader.style.opacity = 1;
+      setTimeout(() => {
+        loader.style.transition = "opacity 0.6s ease";
+        loader.style.opacity = 0;
+        setTimeout(() => loader.style.display = "none", 600);
+      }, 500); // وقت الانتظار بعد التحميل
+    }
+  });
 </script>
 </body>
                                                                                                                </html>
