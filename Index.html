@@ -1887,6 +1887,34 @@ Demonstrated consistent excellence in delivering outstanding hospitality service
       }, 5000); // ← 5 ثواني
     }
   });
+
+  const skillsSection = document.getElementById("skills");
+  let skillsAnimated = false;
+
+  function animateSkills() {
+    if (!skillsSection) return;
+
+    const sectionTop = skillsSection.getBoundingClientRect().top;
+    const screenHeight = window.innerHeight;
+
+    if (sectionTop < screenHeight && !skillsAnimated) {
+      const bars = document.querySelectorAll(".skill-progress");
+
+      bars.forEach((bar) => {
+        const targetWidth = bar.getAttribute("data-width");
+        bar.style.width = "0";
+        setTimeout(() => {
+          bar.style.transition = "width 2s ease-in-out";
+          bar.style.width = targetWidth;
+        }, 100);
+      });
+
+      skillsAnimated = true;
+    }
+  }
+
+  window.addEventListener("scroll", animateSkills);
+  window.addEventListener("load", animateSkills);
 </script>
 </body>
                                                                                                                </html>
